@@ -7,7 +7,8 @@ const app = express()
 //set up mongoose connection
 const mongoose = require('mongoose')
 
-let dev_db_user = 'mongodb://pranjal:pranjal1234@ds153974.mlab.com:53974/product_db'
+// ************* Replace username and password with your ****************
+let dev_db_user = 'mongodb://username:password@ds153974.mlab.com:53974/product_db'
 
 const mongoDB = process.env.MONGODB_URI || dev_db_user;
 mongoose.connect(mongoDB);
