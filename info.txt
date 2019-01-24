@@ -1,0 +1,18 @@
+git add .
+git commit -m ""
+git push heroku master
+
+//hosting app on heroku
+heroku login
+heroku create
+heroku ps:scale web=1
+heroku open
+heroku restart
+heroku logs --tail
+
+//run the app locally
+heroku local web
+
+URL : https://pacific-citadel-55215.herokuapp.com/product/test
+
+Notes: Add Procfile with 'web: node app.js' to provide the start point for the application

@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const product = require('./routes/product.route')
+const movie = require('./routes/movie.route')
 
 const app = express()
 
@@ -18,6 +19,9 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
+
+//services
 app.use("/product", product)
+app.use("/movies", movie)
 
 app.listen(process.env.PORT || 5000, () => console.log('Server Started at 5000'))
