@@ -20,3 +20,6 @@ Notes: Add Procfile with 'web: node app.js' to provide the start point for the a
 
 Tutorial for webhook:
 https://chatbotslife.com/creating-a-nodejs-based-webhook-for-intelligent-bots-a91ecbe33402
+
+Webhook V2 response format:
+https://dialogflow.com/docs/reference/v1-v2-migration-guide-fulfillment#v2-webhook-response

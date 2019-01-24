@@ -16,9 +16,18 @@ exports.getMovieDetails = ('', (req, res) => {
             dataToSend += `${movie.Title} is a ${movie.Actors} starer ${movie.Genre} movie, released in ${movie.Year}. It was directed by ${movie.Director}`;
 
             return res.json({
-                speech: dataToSend,
-                displayText: dataToSend,
-                source: 'getMovieDetails'
+                // speech: dataToSend,
+                // displayText: dataToSend,
+                // source: 'getMovieDetails'
+                fulfillmentText: dataToSend,
+                fulfillmentMessages: [
+                    {
+                        text: [
+                            dataToSend
+                        ],
+                    }
+                ],
+                "source": "example.com",
             });
         });
     }, (error) => {
