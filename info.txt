@@ -16,3 +16,7 @@ heroku local web
 URL : https://pacific-citadel-55215.herokuapp.com/product/test
 
 Notes: Add Procfile with 'web: node app.js' to provide the start point for the application
+
+
+Tutorial for webhook:
+https://chatbotslife.com/creating-a-nodejs-based-webhook-for-intelligent-bots-a91ecbe33402
