@@ -22,9 +22,7 @@ exports.getMovieDetails = ('', (req, res) => {
                 fulfillmentText: dataToSend,
                 fulfillmentMessages: [
                     {
-                        text: [
-                            dataToSend
-                        ],
+                        text: dataToSend,
                     }
                 ],
                 "source": "example.com",
