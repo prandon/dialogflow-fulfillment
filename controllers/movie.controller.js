@@ -3,7 +3,7 @@ const API_KEY = require('../apiKey');
 
 exports.getMovieDetails = ('', (req, res) => {
 
-    const movieToSearch = req.body.parameters && req.body.parameters.movie ? req.body.parameters.movie : 'The Godfather';
+    const movieToSearch = req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.movie ? req.body.queryResult.parameters.movie : 'The Godfather';
     const reqUrl = encodeURI(`http://www.omdbapi.com/?t=${movieToSearch}&apikey=${API_KEY}`);
     http.get(reqUrl, (responseFromAPI) => {
         let completeResponse = '';
