@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const product = require('./routes/product.route')
 const movie = require('./routes/movie.route')
+const weather = require('./routes/weather.route')
+const mainRoute = require('./routes/main.routes')
 
 const app = express()
 
@@ -23,5 +25,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 //services
 app.use("/product", product)
 app.use("/movies", movie)
+app.use("/weather", weather)
+app.use("/choice", mainRoute)
 
 app.listen(process.env.PORT || 5000, () => console.log('Server Started at 5000'))

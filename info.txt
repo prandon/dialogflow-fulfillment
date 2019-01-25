@@ -23,3 +23,20 @@ https://chatbotslife.com/creating-a-nodejs-based-webhook-for-intelligent-bots-a9
 
 Webhook V2 response format:
 https://dialogflow.com/docs/reference/v1-v2-migration-guide-fulfillment#v2-webhook-response
+
+//response format required
+{
+    "fulfillmentText": "sentece",
+    "fulfillmentMessages": [
+        {
+            "text": {
+                "text": [
+                    "sentence"
+                ]
+            }
+        }
+    ],
+    "source": "example.com"
+}
+
+//requst format required
