@@ -4,6 +4,7 @@ const product = require('./routes/product.route')
 const movie = require('./routes/movie.route')
 const weather = require('./routes/weather.route')
 const mainRoute = require('./routes/main.routes')
+const phonebookRoute = require('./routes/phonebook.route')
 
 const app = express()
 
@@ -27,5 +28,6 @@ app.use("/product", product)
 app.use("/movies", movie)
 app.use("/weather", weather)
 app.use("/choice", mainRoute)
+app.use('/phone', phonebookRoute)
 
 app.listen(process.env.PORT || 5000, () => console.log('Server Started at 5000'))
