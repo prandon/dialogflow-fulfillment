@@ -9,7 +9,7 @@ exports.getAllEntries = (req, res) => {
         });
     
         res.send(entries);  
-      });
+    });
 }
 
 exports.getEntry = (req, res) => {
@@ -30,5 +30,76 @@ exports.createEntry = (req, res) => {
             return next(error)
         }
         res.send('Saved Successfully');
+    });
+}
+
+exports.fetchAllPhones = (req, callback) => {
+    Phone.find({}, function(err, entries) {
+        let dataToSend = '';
+        if (err) {
+            dataToSend = 'कुछ गड़बड़ है। बाद में कोशिश करें।'
+        }
+        else {
+            var entriesMap = {};
+            entries.forEach(function(entry) {
+                entriesMap[entry._id] = entry;
+            });
+
+            var arrayLength = entries.length;
+            for (var i = 0; i < arrayLength; i++) {
+                dataToSend += 'मुझे याद है कि '+entries[i].name+' का फोन नंबर है '+entries[i].phone+'\n'
+            }
+        }
+    
+        let response;
+        response = {
+            fulfillmentText: dataToSend,
+            fulfillmentMessages: [
+                {
+                    text: {
+                        text: [
+                            dataToSend
+                        ]
+                    }
+                }
+            ],
+            "source": "example.com",
+        }
+        callback(response);
+    });
+    
+}
+
+exports.savePhone = (req, callback) => {
+    let phone = new Phone({
+        name: req.body.queryResult.parameters.name,
+        phone: req.body.queryResult.parameters.phone
+    });
+
+    phone.save(function(error) {
+        let dataToSend = '';
+        if(error) {
+            console.log(error);
+            dataToSend = 'कुछ गड़बड़ है। बाद में कोशिश करें।';
+        }
+        else {
+            dataToSend = 'ठीक है, मैं याद रखूंगा।'
+        }
+
+        let response;
+        response = {
+            fulfillmentText: dataToSend,
+            fulfillmentMessages: [
+                {
+                    text: {
+                        text: [
+                            dataToSend
+                        ]
+                    }
+                }
+            ],
+            "source": "example.com",
+        }
+        callback(response);
     });
 }

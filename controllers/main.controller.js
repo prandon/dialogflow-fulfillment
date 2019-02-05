@@ -1,5 +1,6 @@
 const movie_controller = require('../controllers/movie.controller')
 const weather_controller = require('../controllers/weather.controller')
+const phonebook_controller = require('../controllers/phonebook.controller')
 
 exports.handleRequest = ('', (req, res) => {
 
@@ -10,8 +11,18 @@ exports.handleRequest = ('', (req, res) => {
             return res.json(response)
         })
     }
-    else {
+    else if (requestType === 'weather') {
         weather_controller.fetchWeather(req,(response)=>{
+            return res.json(response)
+        })
+    }
+    else if (requestType === 'phone-get-all') {
+        phonebook_controller.fetchAllPhones(req,(response)=>{
+            return res.json(response)
+        })
+    }
+    else if (requestType === 'phone-save') {
+        phonebook_controller.savePhone(req,(response)=>{
             return res.json(response)
         })
     }
