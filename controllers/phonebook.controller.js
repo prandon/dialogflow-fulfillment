@@ -107,8 +107,8 @@ exports.savePhone = (req, callback) => {
 exports.getPhone = (req, callback) => {
     Phone.find({name: new RegExp('^'+req.body.queryResult.parameters.name+'$', "i")}, function(err, docs) {
         let dataToSend = '';
-        if(error) {
-            console.log(error);
+        if(err) {
+            console.log(err);
             dataToSend = 'कुछ गड़बड़ है। बाद में कोशिश करें।';
         }
         else {
