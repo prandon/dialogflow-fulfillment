@@ -26,5 +26,10 @@ exports.handleRequest = ('', (req, res) => {
             return res.json(response)
         })
     }
+    else if (requestType === 'phone-get') {
+        phonebook_controller.getPhone(req,(response)=>{
+            return res.json(response)
+        })
+    }
     
 });

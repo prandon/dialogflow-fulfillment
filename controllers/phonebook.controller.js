@@ -16,7 +16,7 @@ exports.getEntry = (req, res) => {
     Phone.find({name: new RegExp('^'+req.params.name+'$', "i")}, function(err, docs) {
         if(err) return next(err);
         res.send(docs);
-      });
+    });
 }
 
 exports.createEntry = (req, res) => { 
@@ -84,6 +84,38 @@ exports.savePhone = (req, callback) => {
         }
         else {
             dataToSend = 'ठीक है, मैं याद रखूंगा।'
+        }
+
+        let response;
+        response = {
+            fulfillmentText: dataToSend,
+            fulfillmentMessages: [
+                {
+                    text: {
+                        text: [
+                            dataToSend
+                        ]
+                    }
+                }
+            ],
+            "source": "example.com",
+        }
+        callback(response);
+    });
+}
+
+exports.getPhone = (req, callback) => {
+    Phone.find({name: new RegExp('^'+req.body.queryResult.parameters.name+'$', "i")}, function(err, docs) {
+        let dataToSend = '';
+        if(error) {
+            console.log(error);
+            dataToSend = 'कुछ गड़बड़ है। बाद में कोशिश करें।';
+        }
+        else {
+            var arrayLength = docs.length;
+            for (var i = 0; i < arrayLength; i++) {
+                dataToSend += 'मुझे याद है कि '+docs[i].name+' का फोन नंबर है '+docs[i].phone+'\n'
+            }
         }
 
         let response;
