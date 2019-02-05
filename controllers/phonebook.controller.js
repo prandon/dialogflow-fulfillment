@@ -113,9 +113,15 @@ exports.getPhone = (req, callback) => {
         }
         else {
             var arrayLength = docs.length;
-            for (var i = 0; i < arrayLength; i++) {
-                dataToSend += 'मुझे याद है कि '+docs[i].name+' का फोन नंबर है '+docs[i].phone+'\n'
+            if (arrayLength > 0){
+                for (var i = 0; i < arrayLength; i++) {
+                    dataToSend += 'मुझे याद है कि '+docs[i].name+' का फोन नंबर है '+docs[i].phone+'\n'
+                }
             }
+            else{
+                dataToSend = 'क्षमा करें, मुझे '+req.body.queryResult.parameters.name+' के बारे में कुछ भी याद नहीं है'
+            }
+            
         }
 
         let response;
