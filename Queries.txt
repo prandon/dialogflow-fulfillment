@@ -1,0 +1,7 @@
+Hello                                           नमस्ते
+my name is mohammed                             मेरा नाम मोहम्मद है
+what is my name?                                मेरा नाम क्या है?
+Tell me what you remember                       मुझे बताइए आपको क्या याद है
+Remember Manish's phone number is 100101        याद रखें मनीष का फोन नंबर 100101 है
+Remember that Ramesh's phone number is 1991919  याद रहे कि रमेश का फोन नंबर 1991919 है
+Tell me manish's phone number                   मुझे मनीष का फोन नंबर बताओ
