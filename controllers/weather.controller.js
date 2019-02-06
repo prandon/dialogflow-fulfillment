@@ -57,7 +57,7 @@ exports.fetchWeather = (req, callback) => {
         responseFromAPI.on('end', () => {
             const weatherData = JSON.parse(completeResponse);
             
-            let dataToSend = weatherData.cod == 404 ? `I can't find this city.\n` : `It is ${weatherData.weather[0].description}. Temprature is ${weatherData.main.temp} °f and humidity is ${weatherData.main.humidity} %. \n Do you want to know something else?`;
+            let dataToSend = weatherData.cod == 404 ? `I can't find this city.\n` : `It is ${weatherData.weather[0].description}. Temprature is ${weatherData.main.temp} °f and humidity is ${weatherData.main.humidity}%. \n Do you want to know something else?`;
             response = {
                 fulfillmentText: dataToSend,
                 fulfillmentMessages: [
