@@ -46,8 +46,9 @@ exports.fetchAllPhones = (req, callback) => {
             });
 
             var arrayLength = entries.length;
+            dataToSend += 'नीचे उन चीजों की सूची है जो मुझे याद है'
             for (var i = 0; i < arrayLength; i++) {
-                dataToSend += 'मुझे याद है कि '+entries[i].name+' का फोन नंबर है '+entries[i].phone+'\n'
+                dataToSend += entries[i].name+': '+entries[i].phone+'\n'
             }
         }
     
@@ -113,9 +114,15 @@ exports.getPhone = (req, callback) => {
         }
         else {
             var arrayLength = docs.length;
-            if (arrayLength > 0){
+            if (arrayLength == 1){
                 for (var i = 0; i < arrayLength; i++) {
-                    dataToSend += 'मुझे याद है कि '+docs[i].name+' का फोन नंबर है '+docs[i].phone+'\n'
+                    dataToSend += docs[i].name+' का फोन नंबर है '+docs[i].phone+'\n'
+                }
+            }
+            else if (arrayLength > 1){
+                dataToSend += 'मेरे पास मनीष के '+arrayLength+' फोन नंबर सेव हैं'
+                for (var i = 0; i < arrayLength; i++) {
+                    dataToSend += docs[i].name+': '+docs[i].phone+'\n'
                 }
             }
             else{
