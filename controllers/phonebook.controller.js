@@ -120,7 +120,7 @@ exports.getPhone = (req, callback) => {
                 }
             }
             else if (arrayLength > 1){
-                dataToSend += 'मेरे पास मनीष के '+arrayLength+' फोन नंबर सेव हैं\n'
+                dataToSend += 'मेरे पास '+docs[0].name+' के '+arrayLength+' फोन नंबर सेव हैं\n'
                 for (var i = 0; i < arrayLength; i++) {
                     dataToSend += docs[i].name+': '+docs[i].phone+'\n'
                 }
