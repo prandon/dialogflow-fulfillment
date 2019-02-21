@@ -44,6 +44,28 @@ and you are ready to go.
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+### Tutorial for webhook:
+https://chatbotslife.com/creating-a-nodejs-based-webhook-for-intelligent-bots-a91ecbe33402
+https://chatbotslife.com/api-ai-lets-create-a-movie-chatbot-in-minutes-f68d8bb568f9
+https://medium.com/@pallavtrivedi03/how-to-make-a-webhook-for-dialogflow-fulfillment-d02835cc50bf
+https://medium.com/@pallavtrivedi03/integrating-dialogflow-as-a-chat-bot-in-an-ios-app-e66a4c7f2723
+https://medium.com/@pallavtrivedi03/building-a-chat-bot-having-ai-is-easy-2b52a4ce74fa
+https://blog.depado.eu/post/dialogflow-golang-webhook
+
+### Webhook V2 response format:
+https://dialogflow.com/docs/reference/v1-v2-migration-guide-fulfillment#v2-webhook-response
+
+//response format required
+{
+    "fulfillmentText": "sentece",
+    "fulfillmentMessages": [
+        {
+            "text": {
+                "text": [
+                    "sentence"
+                ]
+            }
+        }
+    ],
+    "source": "example.com"
+}
