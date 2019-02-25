@@ -9,10 +9,14 @@ It provides fulfillment for following two chatbots
 ### Movie&Weather chatbot
 
 A simple demo bot that can give information about movies by movie name and give weather information of any city by its name.
+You can import this dialogflow agent by downloading from [here](https://drive.google.com/open?id=1B5hyjaiM4t6d3N_-nuItUsQDgH0cxUML).
+To import, create a new dialogflow agent and go to the settings, then go to Import/Exports tab, select the zip file and click on Import.
 
 ### Hindi chatbot
 
 Built to demonstrate how a Hindi chatbot can be created and trained. It can save phone numbers and retrive them when requested by the user. It is integrated with a custom frontend which can be found [here](https://github.com/prandon/chatbot_frontend).
+You can import this dialogflow agent by downloading from [here](https://drive.google.com/open?id=1B5hyjaiM4t6d3N_-nuItUsQDgH0cxUML).
+To import, create a new dialogflow agent and go to the settings, then go to Import/Exports tab, select the zip file and click on Import.
 
 ## Installing
 
